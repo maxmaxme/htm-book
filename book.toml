@@ -1,0 +1,6 @@
+[book]
+authors = ["Maxim Lepekha"]
+language = "ru"
+multilingual = false
+src = "src"
+title = "How to Madrid"

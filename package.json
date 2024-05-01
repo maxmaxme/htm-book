@@ -1,0 +1,7 @@
+{
+  "name": "htm-book",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "mdbook serve --open"
+  }
+}
