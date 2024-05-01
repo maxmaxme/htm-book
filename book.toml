@@ -4,3 +4,6 @@ language = "ru"
 multilingual = false
 src = "src"
 title = "How to Madrid"
+
+[output.html]
+edit-url-template = "https://github.com/maxmaxme/htm-book/tree/main/{path}"
