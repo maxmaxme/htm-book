@@ -1,7 +1,7 @@
 # О Мадриде
 
-<a href="../images/madrid-on-map.png" target="_blank">
-<img src="../images/madrid-on-map.png" alt="Мадрид на карте Испании" style="width: 100%; max-width: 200px; margin: 0 auto; display: block;">
+<a href="../images/madrid-on-map.jpg" target="_blank">
+<img src="../images/madrid-on-map.jpg" alt="Мадрид на карте Испании" style="width: 100%; max-width: 200px; margin: 0 auto; display: block;">
 </a>
 
 ## Краткая история Мадрида
