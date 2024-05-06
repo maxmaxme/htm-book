@@ -7,3 +7,64 @@
 
     gtag('config', 'G-FB0LGF5DEY');
 </script>
+
+<script>
+    const isFeedbackEnabled = false
+
+    function sendGaFeedbackEvent(action, label) {
+        gtag('event', 'feedback', {
+            'event_category': 'engagement',
+            'event_label': label,
+            'value': action === 'like' ? 1 : 0
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        if (!isFeedbackEnabled) {
+            return;
+        }
+        var container = document.querySelector('.content main');
+        if (container) {
+            // Create the rate buttons container with styles
+            var rateButtons = document.createElement('div');
+            rateButtons.style.display = 'flex';
+            rateButtons.style.justifyContent = 'center';
+            rateButtons.style.margin = '20px 0';
+
+            // Create the rate buttons
+            var likeButton = document.createElement('button');
+            likeButton.textContent = 'Like';
+            likeButton.style.padding = '10px 20px';
+            likeButton.style.margin = '0 10px';
+            likeButton.style.border = '1px solid #ccc';
+            likeButton.style.borderRadius = '5px';
+            likeButton.style.backgroundColor = '#f0f0f0';
+            likeButton.style.cursor = 'pointer';
+            likeButton.addEventListener('click', function () {
+                sendGaFeedbackEvent('like', 'like');
+                alert('Спасибо за ваш отзыв!');
+            });
+            rateButtons.appendChild(likeButton);
+
+            var dislikeButton = document.createElement('button');
+            dislikeButton.textContent = 'Dislike';
+            dislikeButton.style.padding = '10px 20px';
+            dislikeButton.style.margin = '0 10px';
+            dislikeButton.style.border = '1px solid #ccc';
+            dislikeButton.style.borderRadius = '5px';
+            dislikeButton.style.backgroundColor = '#f0f0f0';
+            dislikeButton.style.cursor = 'pointer';
+            dislikeButton.addEventListener('click', function () {
+                const reason = prompt('Пожалуйста, укажите причину дизлайка:');
+                if (reason) {
+                    sendGaFeedbackEvent('dislike', reason);
+                    alert('Спасибо за ваш отзыв!');
+                }
+            });
+            rateButtons.appendChild(dislikeButton);
+
+            // Add the rate buttons container after the content
+            container.appendChild(rateButtons);
+        }
+    });
+</script>
